@@ -7,14 +7,44 @@ from dc.ext import commands
 
 last_number_of_people = 0
 
-client = dc.Client(intents=dc.Intents.default())
-bot = commands.Bot(command_prefix='!')
+intents = dc.Intents.default()
+intents.message_content = True
+client = dc.Client(intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)
+
 # add quote
+@bot.command(name='repeatinred')
+async def repeat_in_red(ctx, *args):
+  print("Args: ", ' '.join(args))
 # help
-# remove quote 
-# list quotes 
+@bot.command(name='help')
+async def help(ctx, *args):
+  print("Args: ", ' '.join(args))
+# remove quote
+@bot.command(name='remove')
+async def remove(ctx, *args):
+  print("Args: ", ' '.join(args))
+# list quotes
+@bot.command(name='list')
+async def list(ctx, *args):
+  print("Args: ", ' '.join(args))
 # change voice channel 
-# change text channel 
+@bot.command(name='getvoice')
+async def get_voice_channel(ctx, *args):
+  print("Args: ", ' '.join(args))
+# change text channel
+@bot.command(name='gettext')
+async def get_text_channel(ctx, *args):
+  print("Args: ", ' '.join(args))
+# change voice channel 
+@bot.command(name='voice')
+async def change_voice_channel(ctx, *args):
+  print("Args: ", ' '.join(args))
+# change text channel
+@bot.command(name='text')
+async def change_text_channel(ctx, *args):
+  print("Args: ", ' '.join(args))
+
 
 canales = {
   'cafeteria': 689208715685265436,
